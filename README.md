@@ -1,18 +1,17 @@
 # Use
 ---------------------------------------------------------------------------------------------------------------------------------
 
-- Description: Question to choose an option out of a list --> Answer will be stored in $answer
-- question_options
-
-
-- Required varriables:
+question_options  
+Description: Question to choose an option out of a list --> Answer will be stored in $answer  
+  - header
+Required varriables:
 - optionscount          --> The number of available options.
 - option0               --> The option name that will be displayed in the list. Replace "0" with the number of the option.
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
-- Description: Question to choose either y (yes) or n (no) --> Answer will be stored in $answer
 - question_yn
+- Description: Question to choose either y (yes) or n (no) --> Answer will be stored in $answer
 
 
 - Required varriables:
@@ -21,8 +20,8 @@
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
-- Description: ask for any type of data like a path or a username --> Answer will be stored in $answer
 - question_data
+- Description: ask for any type of data like a path or a username --> Answer will be stored in $answer
 
 
 - Required varriables:
@@ -31,8 +30,8 @@
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
-- Description: just prints the header
 - header
+- Description: just prints the header
 
 
 - Required varriables:
@@ -40,8 +39,8 @@
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
-- Description: clears the screen and prints the header
 - newheader
+- Description: clears the screen and prints the header
 
 
 - Required varriables:
