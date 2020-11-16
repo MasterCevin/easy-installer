@@ -1,12 +1,12 @@
 # Use
 ---------------------------------------------------------------------------------------------------------------------------------
 
-``Description: Question to choose an option out of a list --> Answer will be stored in $answer
-question_options``
+Description: Question to choose an option out of a list --> Answer will be stored in $answer
+question_options
 
-``Required varriables:
+Required varriables:
 optionscount          --> The number of available options.
-option0               --> The option name that will be displayed in the list. Replace "0" with the number of the option.``
+option0               --> The option name that will be displayed in the list. Replace "0" with the number of the option.
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
