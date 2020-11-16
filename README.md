@@ -1,6 +1,7 @@
 # Usage
 - You can create a new file and load it into the main.sh by writing the following command into the mian.sh:
 - `. /path/to/file.sh`
+### USE CHECKPOINTS TO TRACK ISSUES WITH THE SCRIPT!!!
 ---------------------------------------------------------------------------------------------------------------------------------
 ```
 question_options
