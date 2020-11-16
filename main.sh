@@ -5,7 +5,7 @@ checkpoint=1 #
 ### Begin of function loading section ###
 
 echo "loading functions, please wait a moment..."
-bash functions.sh
+. ./functions.sh
 
 ### End of function loading section ###
 
@@ -17,14 +17,11 @@ checkpoint=2 #
 
 header
 
-question="Dies ist ein Test"
-defaultanswer=y
+question="Test123"
+defaultanswer="y"
 question_yn
-echo $answer
 
-question="Dies ist ein Test2"
-defaultanswer=n
-question_yn
-echo $answer
-
-question_yn
+question="Dies ist ein Test:"
+defaultanswer="Test123"
+question_data
+echo "$answer"

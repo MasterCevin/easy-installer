@@ -1,6 +1,6 @@
 #################################################################################################################################
 #
-# Description: Question to choose an option out of a list
+# Description: Question to choose an option out of a list --> Answer will be stored in $answer
 # question_options
 #
 # Required varriables:
@@ -9,12 +9,21 @@
 #
 #################################################################################################################################
 #
-# Description: Question to choose either y (yes) or n (no)
+# Description: Question to choose either y (yes) or n (no) --> Answer will be stored in $answer
 # question_yn
 #
 # Required varriables:
 # question		--> The question that will be displayed in front of the answer of the user.
 # defaultanswer		--> Is the default answer, if the client doesnt choose y (yes) or n (no).
+#
+#################################################################################################################################
+#
+# Description: ask for any type of data like a path or a username --> Answer will be stored in $answer
+# question_data
+#
+# Required varriables:
+# question
+# defaultanswer
 #
 #################################################################################################################################
 #
@@ -31,17 +40,6 @@
 #
 # Required varriables:
 # No varriables required
-#
-#################################################################################################################################
-#
-# available soon...
-# 
-# Description: ask for any type of data like a path or a username
-# data_question
-#
-# Required varriables:
-# question
-# defaultanswer
 #
 #################################################################################################################################
 
@@ -186,4 +184,86 @@ validanswer=true
 else
 validanswer=false
 fi
+}
+
+question_data() {
+data_checknull_default
+data_checknull_question
+until [ "$validanswer" == "true" ]
+do
+read -p "$question [$defaultanswer] " answer
+checkvalid_data
+done
+validanswer=""
+defaultanswer=""
+question=""
+defaultanswermessage=""
+}
+
+data_checknull_default() {
+if [ "$defaultanswer" == "" ]
+then
+echo "
+THERE WAS AN ERROR IN THIS SCRIPT!
+Error: defaultanswer is not set!
+checkpoint: $checkpoint"
+exit 1
+fi
+}
+
+data_checknull_question() {
+if [ "$question" == "" ]
+then
+echo "
+THERE WAS AN ERROR IN THIS SCRIPT!
+Error: question is not set!
+checkpoint: $checkpoint"
+exit 1
+fi
+}
+
+checkvalid_data() {
+if [ "$answer" == "" ]
+then
+until [ "$valid" == "true" ]
+do
+echo "
+There was no clear answer specified!
+The question was: $question
+The default answer is: $defaultanswer"
+read -p "Do you want to use the default answer from above? [Y/n]" danswer
+if [ "$danswer" == "" ]
+then
+answer=$defaultanswer
+validanswer=true
+valid=true
+fi
+if [ "$danswer" == "y" ]
+then
+answer=$defaultanswer
+validanswer=true
+valid=true
+fi
+if [ "$danswer" == "Y" ]
+then
+answer=$defaultanswer
+validanswer=true
+valid=true
+fi
+if [ "$danswer" == "n" ]
+then
+validanswer=talse
+valid=true
+fi
+if [ "$danswer" == "N" ]
+then
+validanswer=talse
+valid=true
+fi
+done
+else
+validanswer=true
+fi
+valid=""
+danswer=""
 }
