@@ -3,7 +3,7 @@
 
 question_options  
 Description: Question to choose an option out of a list --> Answer will be stored in $answer  
-  - header
+  
 Required varriables:
 - optionscount          --> The number of available options.
 - option0               --> The option name that will be displayed in the list. Replace "0" with the number of the option.
