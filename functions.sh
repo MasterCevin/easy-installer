@@ -16,7 +16,7 @@ checknull_options
 echo "Please choose an option:"
 for N in {1..$optionscount}
 do
-echo "${N}) ${option${N}}"
+echo "${N}) $option${N}"
 done
 until [ "$validanswer" == "true" ]
 do
